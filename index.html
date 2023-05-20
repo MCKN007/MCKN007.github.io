@@ -1,105 +1,1156 @@
 <!DOCTYPE html>
-<html lang="zh">
-
+<html lang="en">
 <head>
-    <title>傲乐块</title>
-    <meta itemprop="name" content="吃掉小埋" />
-    <meta itemprop="description" content="新概念音游" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width,target-densitydpi=device-dpi" />
-    <link href="./static/index.css" rel="stylesheet" type="text/css">
-    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script src="https://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>复兴会 Revival Society-Made in heaven！</title>
+    <link rel="shortcut icon" href="./images/logo/SPT2.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Minimal Bootstrap Theme">
+    <meta name="keywords" content="onepage,responsive,minimal,bootstrap,theme">
+    <meta name="author" content="">
+
+
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+    
+
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/jpreloader.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="css/plugin.css" type="text/css">
+    <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- custom style css -->
+    <link rel="stylesheet" href="css/custom-style.css" type="text/css">
+
+    <!-- color scheme -->
+    <link rel="stylesheet" href="css/color.css" type="text/css">
+
+    <!-- revolution slider -->
+    <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
+    <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
+
+    <!-- load fonts -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="fonts/elegant_font/HTML_CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="fonts/et-line-font/style.css" type="text/css">
 </head>
 
-<body onLoad="init()" oncontextmenu=self.event.returnValue=false>
-<div id="GameScoreLayer" class="BBOX SHADE bgc1" style="display:none;">
-    <div style="padding:5%;margin-top: 200px;background-color: rgba(125, 181, 216, 0.3);">
-        <div id="GameScoreLayer-text"></div>
-        <div id="GameScoreLayer-CPS" style="margin:5px 0;"></div>
-        <div id="GameScoreLayer-score" style="margin:5px 0;">得分</div>
-        <div id="GameScoreLayer-bast" style="margin:5px 0">最佳</div>
-        <button type="button" class="btn btn-secondary btn-lg" id="replay" onclick="replayBtn()">重来</button>
-        <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.reload()">主页</button>
-        <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='https://github.com/arcxingye/EatKano'">开源</button>
+<body id="homepage">
+
+    <!-- This section is for Splash Screen -->
+    <div id="jSplash">
+        <section class="selected">
+            加载中...
+        </section>
+        <section>
+            一切 为了世界.
+        </section>
+        <section>
+            入会请加qq：2231302257.
+        </section>
     </div>
-</div>
-</div>
-<div id="welcome" class="SHADE BOX-M">
-    <div class="welcome-bg FILL"></div>
-    <div class="FILL BOX-M" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:5;">
-        <div style="margin:0 8% 0 9%;">
-            <div style="font-size:2.6em; color:#FEF002;">新概念音游</div><br />
-            <div id="desc" style="display: block;font-size:2.2em; color:#fff; line-height:1.5em;">
-                从最底下的开始<br />
-                看你能得多少分<br />
-            </div>
-            <br />
-            <div id="btn_group" style="display: block;">
-                <a class="btn btn-primary btn-lg" onclick="readyBtn()">开始游戏</a>
-                <br/><br/>
+    <!-- End of Splash Screen -->
 
-                <div class="dropdown">
-                    <a class="btn btn-secondary btn-lg" href="javascript: void(0);" role="button" id="mode" data-bs-toggle="dropdown" aria-expanded="false">普通模式</a>
-                    <ul class="dropdown-menu" aria-labelledby="mode">
-                        <li><a class="dropdown-item" onclick="changeMode(MODE_NORMAL)">普通模式</a></li>
-                        <li><a class="dropdown-item" onclick="changeMode(MODE_ENDLESS)">无尽模式</a></li>
-                        <li><a class="dropdown-item" onclick="changeMode(MODE_PRACTICE)">练习模式</a></li>
-                    </ul>
+
+    <div id="wrapper">
+        <div class="page-overlay">
+        </div>
+
+
+        <!-- header begin -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- logo begin -->
+                        <h1 id="logo">
+                            <a href="index.html">
+                                <img class="logo-1" src="images/logo-2.png" alt="">
+                                <img class="logo-2" src="images/logo-2.png" alt="">
+                            </a>
+                        </h1>
+                        <!-- logo close -->
+
+                        <!-- small button begin -->
+                        <span id="menu-btn"></span>
+                        <!-- small button close -->
+
+                        <!-- mainmenu begin -->
+                        <nav>
+                            <ul id="mainmenu">
+                                <li><a class="active" href="#wrapper">Home</a></li>
+                                <li><a href="#section-about">About Us</a></li>
+				<li><a href="#section-plans">Plans</a></li>
+                                <li><a href="#section-projects">Projects</a></li>
+                                <li><a href="#section-news">News/Blog</a></li>
+                                <li><a href="#section-join">Join</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <!-- mainmenu close -->
+
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+
+
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
+
+
+            <!-- section begin -->
+            <section id="section-welcome" class="full-height dark" data-speed="3" data-type="background">
+                <div class="center-y text-center">
+                    RS awalys with the world.
+                <div class="spacer-single"></div>
+                    <div class="text-slider border-deco">
+                        <div class="text-item">Welcome To <span class="id-color">Revival Society</span></div>
+                        <div><span class="id-color">复兴 </span>会</div>
+                        <div class="text-item">现执政派别: <font color="#32CD99">亚特兰蒂斯</font></div>
+                        <div class="text-item"><img src="./images/SPT.png" width="60px" high="60px" /><span class="id-color">Ready to Go?</span></div>
+                    </div>
+                    <div class="spacer-single"></div>
+                    <a id="Join2" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2231302257" target="_blank" class="btn btn-border btn-big">Join us.</a>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+            <!-- section begin -->
+            <section id="section-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <h1 class="animated" data-animation="fadeInUp">Who We <span class="id-color">Are?</span>
+                                    <span class="small-border animated" data-animation="fadeInUp"></span>
+                                </h1>
+                                <p class="lead animated" data-animation="fadeInUp">
+                                    我们是一个为所有与RS核心思想相同的人提供平台的组织。我们希望能让更多人认可RS的思想。我们的最终目标是让每个人都能在复兴会的思想标准下找到与你观点一致的人!<br/>We are an organization that provides a platform for all people who share the core idea of RS. We hope to make more people recognize RS's idea. Our ultimate goal is to let everyone find people who agree with you under the ideological standard of the revival society!                                <div class="spacer-single"></div>
+                            </div>
+                        </div>
+                        <!-- featured box begin -->
+                        <div class="feature-box-small-icon box-fx center col-md-3 animated" data-animation="fadeInUp" data-delay="0">
+                            <div class="inner">
+                                <div class="front">
+                                    <i class="icon-genius"></i>
+                                    <h3>我们的宗旨</h3>
+                                    <span>Our purpose.</span>
+                                </div>
+                                <div class="info">
+                                    与世界同在,与自然同在,与人类同在.
+								    <br/>
+									顺 其 自 然
+                                	<br>
+                                    <a href="https://revivalsociety.fandom.com/zh/wiki/%E5%A4%8D%E5%85%B4%E4%BC%9A_Wiki" target="_blank" class="btn btn-border">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- featured box close -->
+
+                        <!-- featured box begin -->
+                        <div class="feature-box-small-icon box-fx center col-md-3 animated" data-animation="fadeInUp" data-delay="200">
+                            <div class="inner">
+                                <div class="front">
+                                    <i class="icon-linegraph"></i>
+                                    <h3>我们的发展历程</h3>
+                                    <span>Our development process.</span>
+                                </div>
+                                <div class="info">
+                                    点击Read More.
+                                	<br>
+                                    <a href="https://revivalsociety.fandom.com/zh/wiki/%E5%A4%8D%E5%85%B4%E4%BC%9A_Wiki" target="_blank" class="btn btn-border">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- featured box close -->
+
+                        <!-- featured box begin -->
+                        <div class="feature-box-small-icon box-fx center col-md-3 animated" data-animation="fadeInUp" data-delay="400">
+                            <div class="inner">
+                                <div class="front">
+                                    <i class="icon-layers"></i>
+                                    <h3>我们的未来规划</h3>
+                                    <span>Our future plan.</span>
+                                </div>
+                                <div class="info">
+                                    当前为招人阶段,详情请点击Read More.
+                                	<br>
+                                    <a href="https://revivalsociety.fandom.com/zh/wiki/%E5%A4%8D%E5%85%B4%E4%BC%9A_Wiki" target="_blank" class="btn btn-border">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- featured box close -->
+
+                        <!-- featured box begin -->
+                        <div class="feature-box-small-icon box-fx center col-md-3 animated" data-animation="fadeInUp" data-delay="600">
+                            <div class="inner">
+                                <div class="front">
+                                    <i class="icon-heart"></i>
+                                    <h3>我们的体系</h3>
+                                    <span>Our system.</span>
+                                </div>
+                                <div class="info">
+                                    请点击Read More.
+				<br>
+                                    <a href="https://revivalsociety.fandom.com/zh/wiki/%E5%A4%8D%E5%85%B4%E4%BC%9A_Wiki" target="_blank" class="btn btn-border">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- featured box close -->
+
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-about-us-2" class="side-bg no-padding">
+                <div class="image-container col-md-5 pull-left animated" data-animation="fadeInLeft" data-delay="0"></div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="inner-padding">
+                            <div class="col-md-6 col-md-offset-6 animated" data-animation="fadeInRight" data-delay="200">
+                                <h2>We are an organization that provides a platform for all people who share the core idea of RS.</h2>
+
+				<p class="intro">我们是一个为所有与RS核心思想相同的人提供平台的组织。我们希望能让更多人认可RS的思想。我们的最终目标是让每个人都能在复兴会的思想标准下找到与你观点一致的人!<br/>We are an organization that provides a platform for all people who share the core idea of RS. We hope to make more people recognize RS's idea. Our ultimate goal is to let everyone find people who agree with you under the ideological standard of the revival society! </p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>Our Vision</h3>
+					<p>让每人都能在复兴会的规则下找到与自己思想相同的人，复兴会会给个每个人提供平台.<br/>So that everyone can find people with the same ideas under the rules of the revival society, and the revival society will provide a platform for everyone.</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3>Our Mission</h3>
+					<p>与世界同在,与自然同在,与人类同在.<br/>Be with the world,nature and mankind.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <!-- section begin -->
+            <section class="no-padding dark" data-speed="5" data-type="background">
+                <div class="de-video-container">
+                    <div class="de-video-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 text-center">
+                                    <h1 class="animated" data-animation="fadeInUp">Ready To <span class="id-color">JOIN US?</span>
+                                        <span class="small-border animated" data-animation="fadeInUp"></span>
+                                    </h1>
+                                    <div class="animated" data-animation="fadeInUp">
+                                        Join the Revival Society so that you don't fight alone       	<div class="spacer-single"></div>
+                                        <a id="Join3" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2231302257" target="_blank" class="btn btn-border" data-animation="fadeIn">Click Here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="de-video-overlay"></div>
+
+                    <!-- load your video here -->
+                    <video autoplay="" loop="" muted="" poster="video/video-1.jpg">
+                        <source src="video/video-1.webm" type="video/webm" />
+                        <source src="video/video-1.mp4" type="video/mp4" />
+                        <source src="video/video-1.ogg" type="video/ogg" />
+                    </video>
+
+
                 </div>
 
-                <br/>
-                <a class="btn btn-secondary btn-lg" onclick="show_setting()">游戏设置</a>
-            </div>
-            <div id="setting" style="display: none;">
-                <div class="container mb-3">
-                    <input type="button" class="btn btn-secondary btn-lg" onclick="getClickBeforeImage()" value="设置点击前的图" style="left: 0">
-                    <input type="file" id="click-before-image" accept="image/*" style="display: none;" onchange="saveClickBeforeImage()">
-                    <input type="button" class="btn btn-secondary btn-lg" onclick="getClickAfterImage()" value="设置点击后的图" style="right: 0">
-                    <input type="file" id="click-after-image" accept="image/*" style="display: none;" onchange="saveClickAfterImage()">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">标题</span>
+            </section>
+            <!-- section close -->
+
+            <!-- team section begin -->
+            <section id="section-team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">The <span class="id-color">Revival Society</span>
+                                <span class="small-border animated" data-animation="fadeInUp"></span>
+                            </h1>
+                            <p class="lead animated" data-animation="fadeInUp">
+                               RS元老级人物                            </p>
+                            <div class="spacer-single"></div>
+                        </div>
                     </div>
-                    <input type="text" id="title" class="form-control" placeholder="吃掉小埋">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">按键</span>
+
+
+                    <div class="row">
+                        <!-- team member -->
+                        <div class="de-team-list col-md-3 animated" data-animation="fadeInUp" data-delay="0">
+                            <div class="team-pic">
+                                <img src="images/team/team_pic_1.jpg" class="img-responsive" alt="" />
+                            </div>
+                            <div class="team-desc col-md-12">
+                                <h3>TianYe ORG</h3>
+                                <p class="lead">Atlantis fact governor,founder of RS</p>
+                                <div class="small-border"></div>
+                                <p>亚特兰蒂斯派别执政员,RS创始人,King's ORG成员,RS内阁成员,为RS第一阶段解体的后事做了突出贡献.</p>
+
+                               <!-- <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+				    </div>-->
+                            </div>
+                        </div>
+                        <!-- team close -->
+
+                        <!-- team member -->
+                        <div class="de-team-list col-md-3 animated" data-animation="fadeInUp" data-delay="0">
+                            <div class="team-pic">
+                                <img src="images/team/team_pic_2.jpg" class="img-responsive" alt="" />
+                            </div>
+                            <div class="team-desc col-md-12">
+                                <h3>HanYue MC</h3>
+                                <p class="lead">Atlantis member.</p>
+                                <div class="small-border"></div>
+                                <p>RS第一阶段解体的领导者.</p>
+
+                               <!-- <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+				 </div>-->
+                            </div>
+                        </div>
+                        <!-- team close -->
+
+                        <!-- team member -->
+                        <div class="de-team-list col-md-3 animated" data-animation="fadeInUp" data-delay="0">
+                            <div class="team-pic">
+                                <img src="images/team/team_pic_3.jpg" class="img-responsive" alt="" />
+                            </div>
+                            <div class="team-desc col-md-12">
+                                <h3>Bridgedrake.KGM</h3>
+                                <p class="lead">Atlantis member.</p>
+                                <div class="small-border"></div>
+                                <p>RS第一阶段解体的参与者.</p>
+                               <!-- <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+			       </div>-->
+                            </div>
+                        </div>
+                        <!-- team close -->
+
+                        <!-- team member -->
+                        <div class="de-team-list col-md-3 animated" data-animation="fadeInUp" data-delay="0">
+                            <div class="team-pic">
+                                <img src="images/team/team_pic_4.jpg" class="img-responsive" alt="" />
+                            </div>
+                            <div class="team-desc col-md-12">
+                                <h3>21356******</h3>
+                                <p class="lead">Atlantis member.</p>
+                                <div class="small-border"></div>
+                                <p>RS创始人之一.</p>
+                              <!--  <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+				    </div> -->
+                            </div>
+                        </div>
+                        <!-- team close -->
+
+                        <div class="clearfix"></div>
+
                     </div>
-                    <input type="text" id="keyboard" class="form-control" maxlength=4 placeholder="默认为DFJK">
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">时间</span>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="fun-facts" class="dark" data-speed="7" data-type="background">
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">Infor<span class="id-color">mation</span></h1>
+                            <span class="small-border animated" data-animation="fadeInUp"></span>
+                            <div class="spacer-single"></div>
+                        </div>
+
+                        <div class="col-md-3 animated" data-animation="fadeInLeft" data-delay="0">
+                            <div class="de_count">
+                                <i class="icon-alarmclock animated" data-animation="fadeInDown" data-delay="0"></i>
+                                <h3 class="timer" data-to="2" data-speed="2500">0</h3>
+                                <span>Run time(year)</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 animated" data-animation="fadeInLeft" data-delay="0">
+                            <div class="de_count">
+                                <i class="icon-documents animated" data-animation="fadeInDown" data-delay="400"></i>
+                                <h3 class="timer" data-to="7" data-speed="2500">0</h3>
+                                <span>Member</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 animated" data-animation="fadeInRight" data-delay="0">
+                            <div class="de_count">
+                                <i class="icon-piechart animated" data-animation="fadeInDown" data-delay="900"></i>
+                                <h3 class="timer" data-to="1" data-speed="2500">0</h3>
+                                <span>Factions</span>
+                            </div>
+                        </div>
+
+                         <div class="col-md-3 animated" data-animation="fadeInRight" data-delay="0">
+                            <div class="de_count">
+                                <i class="icon-map" data-animation="fadeInDown" data-delay="1300"></i>
+                                <h3 class="timer" data-to="2" data-speed="2500">0</h3>
+                                <span>Distribution Area</span>
+                            </div>
+			 </div>
                     </div>
-                    <input type="text" id="gameTime" class="form-control" maxlength=4 placeholder="默认为20秒">
+
                 </div>
-                <!-- 此为无排行榜版本，隐藏了名字留言 -->
-                <div class="input-group mb-3" style="display: none;">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">名字</span>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-plans" class="dark" data-speed="10" data-type="background">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">The degree of realization of <span class="id-color">Our plans</span>
+                                <span class="small-border animated" data-animation="fadeInUp"></span>
+                            </h1>
+                            <div class="spacer-single"></div>
+                        </div>
                     </div>
-                    <input type="text" id="username" class="form-control" maxlength=8 placeholder="用于纪录排行(特殊字符会被过滤)">
-                </div>
-                <div class="input-group mb-3" style="display: none;">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">留言</span>
+
+                    <div class="row">
+                        <div class="col-md-6">
+				<h3>整体实现程度.</h3>
+				<br>
+				<h3>Overall realization degree.</h3>
+                            <div class="de-progress">
+                                <div class="progress-bar" data-value="1%">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+			    	<h3>官网建设完成度.</h3>
+				<br>
+				<h3>Official website construction.</h3>
+                           <div class="de-progress">
+                                <div class="progress-bar" data-value="75%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spacer-single"></div>
+
+                        <div class="col-md-6">
+				<h3>目前招人计划完成度(100人).</h3>
+				<br>
+				<h3>Completion degree of current recruitment plan (100 persons).</h3>
+                            <div class="de-progress">
+                                <div class="progress-bar" data-value="7%">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+				<h3>网页项目建设程度.</h3>
+				<br>
+				<h3>Construction progress of web page project.</h3>
+                            <div class="de-progress">
+                                <div class="progress-bar" data-value="2%">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spacer-single"></div>
+
+                        <div class="col-md-6">
+				<h3>软件项目建设程度.</h3>
+				<br>
+				<h3>Software development.</h3>
+                            <div class="de-progress">
+                                <div class="progress-bar" data-value="0%">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+				<h3>其他计划.</h3>
+				<br>
+				<h3>Other plans.</h3>
+                            <div class="de-progress">
+                                <div class="progress-bar" data-value="0%">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input type="text" id="message" class="form-control" maxlength=50 placeholder="禁广告/脏话(本项可不填)">
                 </div>
-                <button type="button" class="btn btn-secondary btn-lg" onclick="show_btn();save_cookie();">完成</button>
-            </div>
+            </section>
+	    <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-projects" class="no-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">Projects produced <span class="id-color">By RS</span>
+                                <span class="small-border animated" data-animation="fadeInUp"></span>
+                            </h1>
+                            <p class="lead animated" data-animation="fadeInUp">
+                                Representative projects produced by RS(not made in heaven,but made in Revival Society).
+                            </p>
+                            <div class="spacer-single"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- feature box begin -->
+                        <div class="feature-box-small-icon col-md-4 animated" data-animation="fadeInUp" data-delay="0">
+                            <div class="inner">
+                                <i class="icon-notebook"></i>
+                                <div class="text">
+                                    <h3>Web page development.</h3>
+                                    It will be updated in the future.
+				</div>
+                            </div>
+                        </div>
+                        <!-- feature box close -->
+
+                        <!-- feature box begin -->
+                        <div class="feature-box-small-icon col-md-4 animated" data-animation="fadeInUp" data-delay="200">
+                            <div class="inner">
+                                <i class="icon-tools"></i>
+                                <div class="text">
+                                    <h3>RS Font.</h3>
+                                    An English font will be available from July to August 2022.
+				</div>
+                            </div>
+                        </div>
+                        <!-- feature box close -->
+
+                        <!-- feature box begin -->
+                        <div class="feature-box-small-icon col-md-4 animated" data-animation="fadeInUp" data-delay="400">
+                            <div class="inner">
+                                <i class="icon-global"></i>
+                                <div class="text">
+                                    <h3>Network purification activities.</h3>
+                                    The network purification activity will be launched around 2023.
+			        </div>
+                            </div>
+                        </div>
+                        <!-- feature box close -->
+
+                        <!-- feature box begin -->
+                        <div class="feature-box-small-icon col-md-4 animated" data-animation="fadeInUp" data-delay="600">
+                            <div class="inner">
+                                <i class="icon-phone"></i>
+                                <div class="text">
+                                    <h3>Mobile Apps</h3>
+                                    Open after 2025.
+				</div>
+                            </div>
+                        </div>
+                        <!-- feature box close -->
+
+
+                        <!-- feature box begin
+                        <div class="feature-box-small-icon col-md-4 animated" data-animation="fadeInUp" data-delay="800">
+                            <div class="inner">
+                                <i class="icon-magnifying-glass"></i>
+                                <div class="text">
+                                    <h3>SEO Services</h3>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem.
+                                </div>
+                            </div>
+                        </div>
+                        -->
+
+                        <!--
+                        <div class="feature-box-small-icon col-md-4 animated" data-animation="fadeInUp" data-delay="1000">
+                            <div class="inner">
+                                <i class="icon-pencil"></i>
+                                <div class="text">
+                                    <h3>Copywriter</h3>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem.
+                                </div>
+                            </div>
+                        </div>
+                        -->
+
+                        <div class="spacer-single"></div>
+
+                        <div class="col-md-12 text-center animated" data-animation="fadeInUp" data-delay="400">
+                            <img src="images/RS_ss.png" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+
+            <!-- section begin -->
+            <section id="section-projects-2" class="no-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">Our <span class="id-color">Works</span>
+                                <span class="small-border animated" data-animation="fadeInUp"></span>
+                            </h1>
+                            <div class="spacer-single"></div>
+                        </div>
+                    </div>
+
+                    <!-- portfolio filter begin -->
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <ul id="filters" class="animated" data-animation="fadeInUp" data-delay="200">
+                                <li><a href="#" data-filter="*" class="selected">show all</a></li>
+                                <li><a href="#" data-filter=".illustration">Plan realization</a></li>
+                                <li><a href="#" data-filter=".mobile">Apps</a></li>
+                                <li><a href="#" data-filter=".photography">Website</a></li>
+                                <li><a href="#" data-filter=".website">Other</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- portfolio filter close -->
+
+                </div>
+
+                <div id="gallery" class="gallery full-gallery de-gallery pf_full_width animated" data-animation="fadeInUp" data-delay="200">
+
+                    <!-- gallery item -->
+                    <div class="item illustration">
+                        <div class="picframe">
+                            <span class="overlay">
+                                <span class="icon">
+                                    <a href="images/portfolio/pf%20(1).jpg" data-type="prettyPhoto[gallery]"><i class="fa fa-search icon-view"></i></a>
+                                </span>
+                                <span class="icon">
+                                    <i class="fa fa-align-justify fa-external-link icon-info"></i>
+                                </span>
+                                <span class="pf_text">
+                                    <span class="project-name">Project Name #1</span>
+                                    <span>illustration</span>
+                                </span>
+                            </span>
+
+                            <img src="images/portfolio/pf%20(1).jpg" alt="" />
+                        </div>
+                    </div>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <div class="item mobile website">
+                        <div class="picframe">
+                            <span class="overlay">
+                                <span class="icon">
+                                    <a href="images/portfolio/pf%20(2).jpg" data-type="prettyPhoto[gallery]"><i class="fa fa-search icon-view"></i></a>
+                                </span><span class="icon">
+                                    <i class="fa fa-align-justify fa-external-link icon-info"></i>
+                                </span>
+                                <span class="pf_text">
+                                    <span class="project-name">Project Name #2</span>
+                                    <span>mobile, website</span>
+                                </span>
+                            </span>
+
+                            <img src="images/portfolio/pf%20(2).jpg" alt="" />
+                        </div>
+                    </div>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <div class="item website mobile">
+                        <div class="picframe">
+                            <span class="overlay">
+                                <span class="icon">
+                                    <a href="images/portfolio/pf%20(3).jpg" data-type="prettyPhoto[gallery]"><i class="fa fa-search icon-view"></i></a>
+                                </span><span class="icon">
+                                    <i class="fa fa-align-justify fa-external-link icon-info"></i>
+                                </span>
+                                <span class="pf_text">
+                                    <span class="project-name">Project Name #3</span>
+                                    <span>mobile, website</span>
+                                </span>
+                            </span>
+
+                            <img src="images/portfolio/pf%20(3).jpg" alt="" />
+                        </div>
+                    </div>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <div class="item illustration photography">
+                        <div class="picframe">
+                            <span class="overlay">
+                                <span class="icon">
+                                    <a href="images/portfolio/pf%20(4).jpg" data-type="prettyPhoto[gallery]"><i class="fa fa-search icon-view"></i></a>
+                                </span><span class="icon">
+                                    <i class="fa fa-align-justify fa-external-link icon-info"></i>
+                                </span>
+                                <span class="pf_text">
+                                    <span class="project-name">Project Name #4</span>
+                                    <span>illustration, photography</span>
+                                </span>
+                            </span>
+                            <img src="images/portfolio/pf%20(4).jpg" alt="" />
+                        </div>
+                    </div>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <div class="item website photography mobile">
+                        <div class="picframe">
+                            <span class="overlay">
+                                <span class="icon">
+                                    <a href="images/portfolio/pf%20(5).jpg" data-type="prettyPhoto[gallery]"><i class="fa fa-search icon-view"></i></a>
+                                </span><span class="icon">
+                                    <i class="fa fa-align-justify fa-external-link icon-info"></i>
+                                </span>
+                                <span class="pf_text">
+                                    <span class="project-name">Project Name #5</span>
+                                    <span>mobile, website</span>
+                                </span>
+                            </span>
+                            <img src="images/portfolio/pf%20(5).jpg" alt="" />
+                        </div>
+                    </div>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <div class="item illustration website">
+                        <div class="picframe">
+                            <span class="overlay">
+                                <span class="icon">
+                                    <a href="images/portfolio/pf%20(6).jpg" data-type="prettyPhoto[gallery]"><i class="fa fa-search icon-view"></i></a>
+                                </span><span class="icon">
+                                    <i class="fa fa-align-justify fa-external-link icon-info"></i>
+                                </span>
+                                <span class="pf_text">
+                                    <span class="project-name">Project Name #6</span>
+                                    <span>illustration, website</span>
+                                </span>
+                            </span>
+                            <img src="images/portfolio/pf%20(6).jpg" alt="" />
+                        </div>
+                    </div>
+                    <!-- close gallery item -->
+
+
+                </div>
+
+                <div id="loader-area">
+                    <div class="project-load"></div>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+            <!-- section begin -->
+            <section id="view-all-projects" class="call-to-action bg-color dark text-center" data-speed="5" data-type="background">
+                <a href="#" class="btn btn-border btn-big">View All Projects</a>
+            </section>
+            <!-- logo carousel section close -->
+
+
+
+            <!-- section begin 
+            <section id="section-testimonial" class="dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">People's evaluation of the <span class="id-color">RS</span></h1>
+                            <span class="small-border animated" data-animation="fadeInUp"></span>
+                            <div class="spacer-single"></div>
+                        </div>
+                    </div>
+                    <div id="testimonial-carousel" class="de_carousel row animated" data-animation="fadeInUp" data-delay="200">
+
+                        <div class="col-md-4 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p>A good platform.</p>
+                                </blockquote>
+                                <div class="de_testi_by">
+                                    <div class="de_testi_pic">
+                                        <img src="images/testi_pic%20(1).jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="de_testi_company">
+                                        <strong>MUITTT</strong>WWE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p>A good platform.</p>
+                                </blockquote>
+                                <div class="de_testi_by">
+                                    <span class="de_testi_pic">
+                                        <img src="images/testi_pic%20(2).jpg" alt="" class="img-circle"></span>
+                                    <div class="de_testi_company">
+                                        <strong>KOAS</strong> KOA
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p>A good platform.</p>
+                                </blockquote>
+                                <div class="de_testi_by">
+                                    <div class="de_testi_pic">
+                                        <img src="images/testi-default.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="de_testi_company">
+                                        <strong>Feldhouse</strong>Soas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p>A good platform!</p>
+                                </blockquote>
+                                <div class="de_testi_by">
+                                    <div class="de_testi_pic">
+                                        <img src="images/testi_pic%20(1).jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="de_testi_company">
+                                        <strong>Barbara</strong>MJE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p>A good platform.</p>
+                                </blockquote>
+                                <div class="de_testi_by">
+                                    <span class="de_testi_pic">
+                                        <img src="images/testi_pic%20(2).jpg" alt="" class="img-circle"></span>
+                                    <div class="de_testi_company">
+                                        <strong>PO</strong>sss
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p>A good platform.</p>
+                                </blockquote>
+                                <div class="de_testi_by">
+                                    <div class="de_testi_pic">
+                                        <img src="images/testi-default.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="de_testi_company">
+                                        <strong>Itweb</strong>,Customer
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </section>
+            section close -->
+
+
+            <!-- section begin -->
+            <section id="section-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">Latest <span class="id-color">News/Blog</span>
+                                <span class="small-border animated" data-animation="fadeInUp"></span>
+                            </h1>
+                            <p class="lead animated" data-animation="fadeInUp">
+                                The latest progress of RS plan and institutional changes.
+			    </p>
+                            <div class="spacer-single"></div>
+                        </div>
+                    </div>
+
+                    <div class="animated" data-animation="fadeInUp" data-delay="200">
+                        <div class="col-md-4 bloglist">
+                            <div class="post-content">
+                                <div class="post-image">
+                                    <div class="flexslider blog-slider">
+                                        <div class="overlay">
+                                        </div>
+                                        <ul class="slides">
+                                            <li>
+                                                <img src="images/blog/pic-blog-1.jpg" alt="" />
+                                            </li>
+                                            <li>
+                                                <img src="images/blog/pic-blog-2.jpg" alt="" />
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="date-box"><span class="day">10</span> <span class="month">JUN</span> </div>
+                                <div class="post-text">
+                                    <h3><a href="css/#">Wiki(已停止更新,转到github托管版Wiki)</a></h3>
+				    停止开发.<br>Preliminary creation.
+				    <br>
+                                    <a href="https://revivalsociety.fandom.com/zh/wiki/%E5%A4%8D%E5%85%B4%E4%BC%9A_Wiki" target="_blank" class="btn-text">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 bloglist">
+                            <div class="post-content">
+                                <div class="post-image">
+                                    <div class="flexslider blog-slider">
+                                        <div class="overlay">
+                                        </div>
+                                        <ul class="slides">
+                                            <li>
+                                                <img src="images/blog/pic-blog-3.jpg" alt="" />
+                                            </li>
+                                            <li>
+                                                <img src="images/blog/pic-blog-4.jpg" alt="" />
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="date-box"><span class="day">10</span> <span class="month">JUN</span> </div>
+                                <div class="post-text">
+                                    <h3><a href="css/#">历史复习资料</a></h3>
+				    V:3.0_20220610_Release版本发布.<br>
+				    V:3.0_20220610_Release was release.
+				    <br>
+                                    <a href="https://revival-society.github.io/Project-RS-History/" target="_blank"  class="btn-text">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 bloglist">
+                            <div class="post-content">
+                                <div class="post-image">
+                                    <div class="flexslider blog-slider">
+                                        <div class="overlay">
+                                        </div>
+                                        <ul class="slides">
+                                            <li>
+                                                <img src="images/blog/pic-blog-5.jpg" alt="" />
+                                            </li>
+                                            <li>
+                                                <img src="images/blog/pic-blog-6.jpg" alt="" />
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="date-box"><span class="day">10</span> <span class="month">JUN</span> </div>
+                                <div class="post-text">
+                                    <h3><a href="css/#">用md格式转html编写的全新wiki(使用github托管)</a></h3>
+				    Beta测试阶段.<br>Beta testing phase.
+				    <br>
+                                    <a href="https://revival-society.github.io/Revival-Society-Wiki/" target="_blank" class="btn-text">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="logo-full">
+                <div class="container">
+                    <!-- logo carousel -->
+                    <div class="row">
+                        <div class="logo-carousel">
+                            <ul id="logo-carousel" class="slides">
+                                <li>
+                                    <div class="col-md-2">
+					<a href="https://www.fandom.com" target="_blank">
+                                        <img src="images/logo/1.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+					<a href="https://www.gitee.com" target="_blank">
+                                        <img src="images/logo/2.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+					<a href="https://www.aliyun.com" target="_blank">
+                                        <img src="images/logo/3.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+					<a href="index.html" target="_blank">
+                                        <img src="images/logo/4.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+					<a href="http://www.themenesia.com/themeforest/cubic-select/" target="_blank">
+                                        <img src="images/logo/5.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+					<a href="https://www.namesilo.com" target="_blank">
+                                        <img src="images/logo/6.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+                                        <img src="images/logo/7.png" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-2">
+                                        <img src="images/logo/8.png" alt="">
+                                    </div>
+                                </li>
+				<li>
+                                    <div class="col-md-2">
+					<a href="https://www.envato.com/" target="_blank">
+                                        <img src="images/logo/9.png" alt="">
+					</a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- logo carousel close -->
+                    </div>
+
+                </div>
+            </section>
+            <!-- section close -->
+
+
+            <!-- section begin -->
+            <section id="section-join" class="dark" data-speed="5" data-type="background">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated" data-animation="fadeInUp">Join <span class="id-color">Us</span>
+                                <span class="small-border animated" data-animation="fadeInUp"></span>
+                            </h1>
+                            <p class="animated" data-animation="fadeIn">
+                                Get in touch with us. Feel Free to use contact below.
+                            </p>
+                            <div class="spacer-single"></div>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <address>
+                                <span><i class="fa fa-map-marker fa-lg"></i>Dublin District, Taiyuan, Shanxi, China</span>
+                                <span><i class="fa fa-phone fa-lg"></i><a href="tel:18335126202" target="_blank">18335126202</a></span>
+                                <span><i class="fa fa-envelope-o fa-lg"></i><a href="mailto:3520645758@qq.com">3520645758@qq.com</a></span>
+                                <span><i class="fa fa-globe fa-lg"></i><a href="https://revival-society.github.io/Revival-Society-Wiki/" target="_blank">复兴会_Wiki</a></span>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- footer begin -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="social-icons">
+                                <a href="#"><i class="fa fa-weixin fa-lg"></i></a>
+                                <a id="Join" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2231302257" target="_blank"><i class="fa fa-qq fa-lg"></i></a>
+                                <a href="mailto:3520645758@qq.com" target="_blank"><i class="fa fa-envelope-o fa-lg"></i></a>
+                                <a href="tel:18335126202" target="_blank"><i class="fa fa-phone fa-lg"></i></a>
+                                <a href="https://weibo.com/u/6090935699?tabtype=home" target="_blank"><i class="fa fa-weibo fa-lg"></i></a>
+				                <a href="https://revival-society.github.io/Revival-Society-Wiki/" target="_blank"><i class="fa fa-vk fa-lg"></i></a>
+                            </div>
+                            <div class="spacer-single">© Copyright 2022 - Revival_Society</div>
+                            <div>ICP备案号: <a href="https://beian.miit.gov.cn/" target="_blank">晋ICP备2022004146号-1</a></div>
+			</div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer close -->
         </div>
     </div>
-</div>
 
-<script src="./static/index.js"></script>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jpreLoader.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.scrollto.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/validation.js"></script>
+
+    <!-- SLIDER REVOLUTION SCRIPTS  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!--自定义-->
+    <!--入会链接移动端更改-->
+    <script src="js/JLC.js"></script>
+
 </body>
-
 </html>
